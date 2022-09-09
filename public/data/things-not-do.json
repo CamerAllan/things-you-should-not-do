@@ -1,0 +1,6 @@
+{
+    "things": [
+        {"num": 100000, "thing": "eat an apple"},
+        {"num": 100001, "thing": "fall off cliff"}
+    ]
+}

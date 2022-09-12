@@ -2,7 +2,7 @@
 import Board from "./Board.svelte";
 
 async function getAircrafts() {
-    const res = await fetch('/data/things-not-do.json');
+    const res = await fetch('/data/12-09-22-1.json');
     const values = await res.json();
 
     return values;

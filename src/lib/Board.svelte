@@ -1,22 +1,54 @@
 <script lang="ts">
-    let count: number = 0
-    const increment = () => {
-        count += 1
-    }
+import type Thing from "src/types/thing";
+
+import Things from "./Things.svelte";
+
+export let newThings: Thing[] = []
+export let oldThings: Thing[] = []
+
 </script>
 
 <div class="board">
     <div class="board-h1">THINGS YOU SHOULD NOT DO</div>
-    <div class="board-h2">(PART N OF ????)</div>
+    <div class="board-h2">(PART 3,647 OF ????)</div>
+    
+    <Things things={oldThings} old={true}/>
+    
+    <div class="separator fauxtalics">NEW!</div>
+    <Things things={newThings}/>
 </div>
 
 <style>
 
+.fauxtalics {
+    transform: skew(-15deg, 0deg);
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid #000;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
 .board {
-    max-width: 900px;
-    min-width: 500px;
+    width: 440px;
     border-color: black;
-    border-width: 1;
+    border-width: 3px;
     border-style: solid;
     padding: 1.5em;
 }
@@ -28,6 +60,7 @@
 
 .board-h2 {
     font-size: 1.2em;
+    padding-bottom: 0.15em;
 }
 
 </style>

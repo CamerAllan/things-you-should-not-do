@@ -1,18 +1,17 @@
 <script lang="ts">
-  import Board from './lib/Board.svelte'
-  import Example from './lib/Example.svelte'
+import Tysnd from './lib/TYSND.svelte';
 </script>
 
 <main>
 
   <div class="card">
-    <Board />
-    <Example />
+    <Tysnd/>
   </div>
 
 </main>
 
 <style>
+
 
 	@font-face {
 		font-family: 'xkcd';
@@ -20,9 +19,4 @@
 		src: url('/fonts/xkcd.otf') format('opentype'); 
 	}
 
-	@font-face {
-		font-family: 'xkcd-regular';
-		font-weight: 500;
-		src: url('/fonts/xkcd-Regular.otf') format('opentype'); 
-	}
 </style>

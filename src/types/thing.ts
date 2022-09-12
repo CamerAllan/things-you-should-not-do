@@ -1,6 +1,6 @@
 interface Thing {
     num: number;
-    text: string;
+    thing: string;
 }
 
 export default Thing

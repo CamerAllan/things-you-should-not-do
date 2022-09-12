@@ -25,6 +25,7 @@ a:hover {
 }
 
 body {
+  letter-spacing: -0.5px;
   margin: 0;
   display: flex;
   place-items: center;

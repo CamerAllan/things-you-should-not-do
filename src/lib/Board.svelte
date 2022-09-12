@@ -46,7 +46,7 @@ export let oldThings: Thing[] = []
 }
 
 .board {
-    width: 440px;
+    width: 420px;
     border-color: black;
     border-width: 3px;
     border-style: solid;

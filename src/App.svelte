@@ -15,8 +15,7 @@ import Tysnd from './lib/TYSND.svelte';
 
 	@font-face {
 		font-family: 'xkcd';
-		font-weight: 500;
-		src: url('/fonts/xkcd.otf') format('opentype'); 
+		src: url('/fonts/xkcd-script.ttf'); 
 	}
 
 </style>

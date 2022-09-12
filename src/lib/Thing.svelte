@@ -28,7 +28,7 @@ td {
 }
 
 .numbering {
-    width: 85px
+    width: 70px
 }
 </style>
 

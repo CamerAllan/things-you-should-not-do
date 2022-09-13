@@ -7,7 +7,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("data-folder", help="path to data folder")
+parser.add_argument("data_folder", help="path to data folder")
 parser.add_argument("-n", type=int, default=18)
 
 # Parse and print the results
@@ -45,13 +45,12 @@ def generate_n(n: int) -> dict:
     things = []
     for i in range(0, n):
         thing = generate()
-        things += thing
+        things.append(thing)
         print(thing)
-
     return things
 
 
-with open(f"{data_folder}/catalogue.json", "r+") as catalogue_file:
+with open(f"{data_folder}/catalogue.json", "r") as catalogue_file:
     catalogue = json.load(catalogue_file)
     previousPart = catalogue["latest"]
     newPart = previousPart + 1
@@ -61,16 +60,18 @@ with open(f"{data_folder}/catalogue.json", "r+") as catalogue_file:
     things = {"oldThings": [], "newThings": newThings}
 
     # Write the things file
-    with open(f"{data_folder}/parts/.json", "w") as json_file:
+    with open(f"{data_folder}/parts/{newPart}.json", "w") as json_file:
         json.dump(things, json_file)
 
     # Calculate new catalogue values
-    previousCatalogueItem = catalogue["all"][-1]
+    previousCatalogueItem = catalogue["all"][f"{previousPart}"]
     previousStartNum = int(previousCatalogueItem["startNum"])
     previousCount = int(previousCatalogueItem["count"])
     newStartNum = previousStartNum + previousCount
     newCount = len(newThings)
 
+
+with open(f"{data_folder}/catalogue.json", "w") as catalogue_file:
     # Update and write the catalogue
     catalogue["latest"] = newPart
     catalogue["all"][newPart] = {"startNum": newStartNum, "count": newCount}

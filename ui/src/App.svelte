@@ -12,8 +12,6 @@
 	}
 
 	let cataloguePromise = getCatalogue();
-
-	console.log("sad");
 </script>
 
 <main>
@@ -25,7 +23,7 @@
 				<Redirect path={`/part/${catalogue.latest}`} />
 			</Route>
 			<Route path={"/part/{part}"}>
-				<Tysnd />
+				<Tysnd all_catalogue={catalogue.all} />
 			</Route>
 		{:catch error}
 			{"Not ready yet! ;)"}

@@ -1,13 +1,13 @@
 <script lang="ts">
   import { numberWithCommas } from "../helpers/formatting";
-  import type Thing from "src/types/thing";
 
   import Things from "./Things.svelte";
   import Link from "./Nav/InternalLink.svelte";
 
   export let part: string;
-  export let newThings: Thing[] = [];
-  export let oldThings: Thing[] = [];
+  export let startNum: number;
+  export let newThings: string[] = [];
+  export let oldThings: string[] = [];
 </script>
 
 <div class="board">
@@ -18,10 +18,10 @@
     > OF ????)
   </div>
 
-  <Things things={oldThings} old={true} />
+  <Things {startNum} things={oldThings} old={true} />
 
   <div class="separator fauxtalics">NEW!</div>
-  <Things things={newThings} />
+  <Things startNum={startNum + oldThings.length} things={newThings} />
 </div>
 
 <style>

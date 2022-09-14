@@ -59,7 +59,7 @@ def generate_prompt(prompt_examples_sample):
     with open(adjectives_filepath, "r") as adjectives_file:
         adjective_1 = random_line(adjectives_file).strip()
 
-    prompt_start = f"Physically Improbable, {adjective_1}, Silly Things You Should Not Do (in the imperative tense):\n"
+    prompt_start = f"Physically Improbable, Convoluted, Silly Things You Should Not Do (in the imperative tense):\n"
 
     prompt = prompt_start
     for sample_example in prompt_examples_sample:

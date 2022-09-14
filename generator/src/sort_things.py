@@ -56,6 +56,7 @@ for thing in unused:
         dupes.append(thing)
 for d in dupes:
     unused.remove(d)
+unused = list(dict.fromkeys(unused))
 
 
 def get_similarity_info(thing, all_things):

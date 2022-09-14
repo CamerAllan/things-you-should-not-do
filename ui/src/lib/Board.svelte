@@ -2,7 +2,6 @@
   import { numberWithCommas } from "../helpers/formatting";
 
   import Things from "./Things.svelte";
-  import Link from "./Nav/InternalLink.svelte";
 
   export let part: string;
   export let startNum: number;
@@ -13,14 +12,15 @@
 <div class="board">
   <div class="board-h1">THINGS YOU SHOULD NOT DO</div>
   <div class="board-h2">
-    (PART <Link path={`/part/${part}`}
-      >{numberWithCommas(Number.parseInt(part))}</Link
-    > OF ????)
+    (PART <a href={`/part/${part}`}>{numberWithCommas(Number.parseInt(part))}</a
+    >
+    OF ????)
   </div>
 
   <Things {startNum} things={oldThings} old={true} />
 
   <div class="separator fauxtalics">NEW!</div>
+
   <Things startNum={startNum + oldThings.length} things={newThings} />
 </div>
 

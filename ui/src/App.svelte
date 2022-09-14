@@ -23,7 +23,10 @@
 				<Redirect path={`/part/${catalogue.latest}`} />
 			</Route>
 			<Route path={"/part/{part}"}>
-				<Tysnd all_catalogue={catalogue.all} />
+				<Tysnd
+					all_catalogue={catalogue.all}
+					latestPart={catalogue.latest}
+				/>
 			</Route>
 		{:catch error}
 			{"Not ready yet! ;)"}
@@ -32,7 +35,7 @@
 
 	<br />
 	Maintained by Cameron Allan. <br />
-	Based on <a href={"https://xkcd.com/2669/"}>this comic</a> by XKCD
+	Based on <a href={"https://xkcd.com/2669/"}>this comic</a> by XKCD.
 </main>
 
 <style>

@@ -3,31 +3,30 @@
 
   import Things from "./Things.svelte";
 
-  export let part: string;
+  export let latestPart: string;
+  export let currentPart: string;
   export let startNum: number;
-  export let newThings: string[] = [];
-  export let oldThings: string[] = [];
+  export let things: string[] = [];
+
+  $: isNewPart = currentPart == latestPart
 </script>
 
 <div class="board">
   <div class="board-h1">THINGS YOU SHOULD NOT DO</div>
   <div class="board-h2">
-    (PART <a href={`/part/${part}`}>{numberWithCommas(Number.parseInt(part))}</a
+    (PART <a href={`/part/${currentPart}`}
+      >{numberWithCommas(Number.parseInt(currentPart))}</a
     >
     OF ????)
   </div>
 
-  <Things {startNum} things={oldThings} old={true} />
-
-  <div class="separator fauxtalics">NEW!</div>
-
-  <Things startNum={startNum + oldThings.length} things={newThings} />
+  {#if isNewPart}
+    <div class="separator fauxtalics">NEW!</div>
+  {/if}
+  <Things old={!isNewPart} startNum={startNum} things={things} />
 </div>
 
 <style>
-  .fauxtalics {
-    transform: skew(-15deg, 0deg);
-  }
 
   .separator {
     display: flex;
@@ -56,6 +55,7 @@
     border-width: 3px;
     border-style: solid;
     padding: 1.5em;
+    margin:auto
   }
 
   .board-h1 {

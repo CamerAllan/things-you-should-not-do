@@ -54,3 +54,7 @@ h1 {
     background-color: #ffffff;
   }
 }
+
+.fauxtalics {
+  transform: skew(-15deg, 0deg);
+}

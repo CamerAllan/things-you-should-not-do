@@ -25,10 +25,10 @@
 {:then thingsJson}
     <Navigation {currentPart} {latestPart} firstPart={3647} />
     <Board
-        part={currentPart}
+        {latestPart}
+        {currentPart}
         startNum={catalogueEntry.startNum}
-        newThings={thingsJson.newThings}
-        oldThings={thingsJson.oldThings}
+        things={thingsJson.newThings}
     />
     <Navigation {currentPart} {latestPart} firstPart={3647} />
 {:catch error}

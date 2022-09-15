@@ -31,7 +31,7 @@ all_things = used + unused + samples
 # De-dupe
 dupes = []
 for thing in unused:
-    if thing in used or thing in samples:
+    if thing == "" or thing in used or thing in samples:
         dupes.append(thing)
 for d in dupes:
     unused.remove(d)

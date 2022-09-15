@@ -8,7 +8,7 @@
   export let startNum: number;
   export let things: string[] = [];
 
-  $: isNewPart = currentPart == latestPart
+  $: isNewPart = currentPart == latestPart;
 </script>
 
 <div class="board">
@@ -23,11 +23,10 @@
   {#if isNewPart}
     <div class="separator fauxtalics">NEW!</div>
   {/if}
-  <Things old={!isNewPart} startNum={startNum} things={things} />
+  <Things old={!isNewPart} {startNum} {things} />
 </div>
 
 <style>
-
   .separator {
     display: flex;
     align-items: center;
@@ -50,12 +49,12 @@
   }
 
   .board {
-    width: 420px;
+    max-width: 420px;
     border-color: black;
     border-width: 3px;
     border-style: solid;
     padding: 1.5em;
-    margin:auto
+    margin: auto;
   }
 
   .board-h1 {

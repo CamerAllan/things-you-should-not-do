@@ -15,7 +15,6 @@
 
 <style>
     .old {
-        opacity: 0.8;
     }
 
     td {

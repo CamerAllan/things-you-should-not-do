@@ -17,9 +17,7 @@
 <main class="main">
 	<div class="content">
 		<Router>
-			{#await cataloguePromise}
-				Uhh
-			{:then catalogue}
+			{#await cataloguePromise then catalogue}
 				<Route path={"/"}>
 					<Redirect path={`/part/${catalogue.latest}`} />
 				</Route>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Router from "./lib/Nav/PoorMansClientSideRouter.svelte";
-	import Route from "./lib/Nav/Route.svelte";
+	import Router from "./lib/PoorMansNav/PoorMansClientSideRouter.svelte";
+	import Route from "./lib/PoorMansNav/PoorMansRoute.svelte";
 	import Redirect from "./lib/Redirect.svelte";
 	import Tysnd from "./lib/TYSND.svelte";
 
@@ -15,6 +15,10 @@
 </script>
 
 <main class="main">
+	<div class="header"> 
+		MORE UPDATES TO XKCD'S "THINGS YOU SHOULD NOT DO" LIST,<br/>
+		SUGGESTED BY GPT-3 (INSPRIRED BY <a href="https://xkcd.com/what-if-2/">WHAT IF? 2</a>)
+	</div>
 	<div class="content">
 		<Router>
 			{#await cataloguePromise then catalogue}
@@ -56,14 +60,19 @@
 		flex-direction: column;
 	}
 
+	.header {
+		margin-top: 20px;
+		text-align: center;
+	}
+
 	.content {
-		margin-top: 1rem;
+		margin-top: 20px;
 		flex: 1;
 	}
 
 	.footer {
 		text-align: center;
-		margin-bottom: 1rem;
+		margin-bottom: 20px;
 	}
 
 	@font-face {

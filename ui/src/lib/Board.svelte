@@ -41,29 +41,40 @@
   }
 
   .separator:not(:empty)::before {
-    margin-right: 0.25em;
+    margin-right: 0.25rem;
   }
 
   .separator:not(:empty)::after {
-    margin-left: 0.25em;
+    margin-left: 0.25rem;
+  }
+
+  @media (prefers-color-scheme: light) {
+    .board {
+      border-color: white;
+    }
+  }
+  
+  @media (prefers-color-scheme: light) {
+    .board {
+      border-color: black;
+    }
   }
 
   .board {
     max-width: 420px;
-    border-color: black;
     border-width: 3px;
     border-style: solid;
-    padding: 1.5em;
+    padding: 25px;
     margin: auto;
   }
 
   .board-h1 {
-    font-size: 2em;
-    padding-bottom: 0.15em;
+    font-size: 2rem;
+    padding-bottom: 5px;
   }
 
   .board-h2 {
-    font-size: 1.2em;
-    padding-bottom: 0.15em;
+    font-size: 1.2rem;
+    padding-bottom: 5px;
   }
 </style>

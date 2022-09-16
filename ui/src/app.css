@@ -36,7 +36,9 @@ body {
 
 #app {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media (prefers-color-scheme: light) {

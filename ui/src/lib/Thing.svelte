@@ -14,14 +14,12 @@
 </tr>
 
 <style>
-    .old {
-    }
 
     td {
         vertical-align: top;
-        font-size: 1.1em;
+        font-size: 1.1rem;
         padding-top: 0.4em;
-        line-height: 1em;
+        line-height: 1rem;
     }
 
     .numbering {

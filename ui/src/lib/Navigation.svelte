@@ -7,10 +7,10 @@
 
 <div class="navContainer">
     <a class="navItem" href={`/part/${firstPart}`}>{"|<"}</a>
-    {#if currentPart > firstPart}
+    {#if currentPart > firstPart && currentPart <= latestPart}
         <a class="navItem" href={`/part/${currentPartInt - 1}`}>{"<"}</a>
     {/if}
-    {#if currentPart < latestPart}
+    {#if currentPart < latestPart && currentPart >= firstPart}
         <a class="navItem" href={`/part/${currentPartInt + 1}`}>{">"}</a>
     {/if}
     <a class="navItem" href={`/part/${latestPart}`}>{">|"}</a>
@@ -21,8 +21,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     .navItem {

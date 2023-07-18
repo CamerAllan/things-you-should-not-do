@@ -4,7 +4,6 @@ from helpers.helpers import (
     load_samples,
     load_unused,
     load_used,
-    random_line,
     write_unused,
 )
 
@@ -52,14 +51,15 @@ def get_similarity_info(thing, all_things):
     return most_similar
 
 
-# Sort used by least similarity
-unused_sim_infos = []
-for t in unused:
-    t_sim_info = get_similarity_info(t, used + samples)
-    if t_sim_info[0] < 0.85:
-        unused_sim_infos.append(t_sim_info)
+# # Sort used by least similarity
+# unused_sim_infos = []
+# for t in unused:
+#     t_sim_info = get_similarity_info(t, used + samples)
+#     if t_sim_info[0] < 0.85:
+#         unused_sim_infos.append(t_sim_info)
 
-unused_sim_infos.sort(key=lambda sim_info: sim_info[0])
-things_sorted = [s[1] for s in unused_sim_infos]
+# unused_sim_infos.sort(key=lambda sim_info: sim_info[0])
+# things_sorted = [s[1] for s in unused_sim_infos]
 # print(things_sorted)
-write_unused(things_sorted, data_folder)
+
+write_unused(unused, data_folder)

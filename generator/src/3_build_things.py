@@ -49,7 +49,7 @@ with open(f"{data_folder}/catalogue.json", "r") as catalogue_file:
 
     # Write the things file
     with open(f"{out_folder}/parts/{newPart}.json", "w") as json_file:
-        json.dump(newThingsDict, json_file)
+        json.dump(newThingsDict, json_file, indent=4)
 
     # Calculate new catalogue values
     previousCatalogueItem = catalogue["all"][f"{previousPart}"]
@@ -64,4 +64,4 @@ with open(f"{data_folder}/catalogue.json", "w") as catalogue_file:
     catalogue["latest"] = newPart
     catalogue["all"][newPart] = {"startNum": newStartNum, "count": newCount}
 
-    json.dump(catalogue, catalogue_file)
+    json.dump(catalogue, catalogue_file, indent=4)

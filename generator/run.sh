@@ -8,10 +8,13 @@ set -Eeuox pipefail
 # Get latest changes
 git pull --rebase
 
+# Choose a random number of entries
+NUM=$(shuf -i 10-18 -n 1)
+
 # Run the thing
-python3 src/1_generate_things.py ./data -n $1
+python3 src/1_generate_things.py ./data -n $NUM
 python3 src/2_sort_things.py ./data 
-python3 src/3_build_things.py ./data ./out -n $1
+python3 src/3_build_things.py ./data ./out -n $NUM
 
 # Copy the outputs into the public directory of the UI
 cp ./out/parts/* ../ui/public/data/parts

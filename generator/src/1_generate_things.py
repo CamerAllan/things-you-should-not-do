@@ -43,10 +43,7 @@ def generate_prompt(prompt_examples_sample):
             "Suggestions should be in the style of Randall Munroe's writing.\n"
             "Suggestions should always be humerous.\n"
             "Suggestions should always be in the imperative tense.\n"
-            "Good suggestions might be outrageous, physically improbable or dangerous.\n"
-            # f"You provide humerous, improbable activities which should not be done under any circumstances.\n"
-            # "Each activity should be conceptually distinct.\n"
-            # "Phrasing of suggestions should be varied, while remaining in the imperative tense."
+            "Good suggestions might be outrageous, physically improbable or dangerous."
         ),
     }
 

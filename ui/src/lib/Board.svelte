@@ -17,7 +17,7 @@
     (PART <a href={`/part/${currentPart}`}
       >{numberWithCommas(Number.parseInt(currentPart))}</a
     >
-    OF ????)
+    OF {latestPart})
   </div>
 
   {#if isNewPart}
@@ -33,11 +33,24 @@
     text-align: center;
   }
 
+  @media (prefers-color-scheme: dark) {
+    .separator::before,
+    .separator::after {
+      border-bottom: 2px solid #ffffff;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .separator::before,
+    .separator::after {
+      border-bottom: 2px solid #251b1b;
+    }
+  }
+
   .separator::before,
   .separator::after {
     content: "";
     flex: 1;
-    border-bottom: 2px solid #000;
   }
 
   .separator:not(:empty)::before {
@@ -47,19 +60,7 @@
   .separator:not(:empty)::after {
     margin-left: 0.25rem;
   }
-
-  @media (prefers-color-scheme: light) {
-    .board {
-      border-color: white;
-    }
-  }
   
-  @media (prefers-color-scheme: light) {
-    .board {
-      border-color: black;
-    }
-  }
-
   .board {
     max-width: 420px;
     border-width: 3px;

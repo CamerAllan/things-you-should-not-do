@@ -17,12 +17,12 @@
 
 a {
   font-weight: 500;
-  color: #6E7B91;
+  color: #6e7b91;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #6E7B91;
+  color: #6e7b91;
 }
 
 body {
@@ -31,8 +31,6 @@ body {
   display: flex;
   min-height: 100vh;
 }
-
-
 
 #app {
   max-width: 1280px;

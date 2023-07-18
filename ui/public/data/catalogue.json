@@ -1,149 +1,77 @@
 {
-    "latest": 3681,
-    "all": {
-        "7331": {
-            "startNum": 80085,
-            "count": 1
-        },
-        "3647": {
-            "startNum": 156812,
-            "count": 18
-        },
-        "3648": {
-            "startNum": 156830,
-            "count": 14
-        },
-        "3649": {
-            "startNum": 156844,
-            "count": 18
-        },
-        "3650": {
-            "startNum": 156862,
-            "count": 15
-        },
-        "3651": {
-            "startNum": 156877,
-            "count": 16
-        },
-        "3652": {
-            "startNum": 156893,
-            "count": 17
-        },
-        "3653": {
-            "startNum": 156910,
-            "count": 14
-        },
-        "3654": {
-            "startNum": 156924,
-            "count": 18
-        },
-        "3655": {
-            "startNum": 156942,
-            "count": 8
-        },
-        "3656": {
-            "startNum": 156950,
-            "count": 16
-        },
-        "3657": {
-            "startNum": 156966,
-            "count": 17
-        },
-        "3658": {
-            "startNum": 156983,
-            "count": 9
-        },
-        "3659": {
-            "startNum": 156992,
-            "count": 11
-        },
-        "3660": {
-            "startNum": 157003,
-            "count": 7
-        },
-        "3661": {
-            "startNum": 157010,
-            "count": 19
-        },
-        "3662": {
-            "startNum": 157029,
-            "count": 12
-        },
-        "3663": {
-            "startNum": 157041,
-            "count": 15
-        },
-        "3664": {
-            "startNum": 157056,
-            "count": 3
-        },
-        "3665": {
-            "startNum": 157059,
-            "count": 9
-        },
-        "3666": {
-            "startNum": 157068,
-            "count": 3
-        },
-        "3667": {
-            "startNum": 157071,
-            "count": 2
-        },
-        "3668": {
-            "startNum": 157073,
-            "count": 2
-        },
-        "3669": {
-            "startNum": 157075,
-            "count": 2
-        },
-        "3670": {
-            "startNum": 157077,
-            "count": 2
-        },
-        "3671": {
-            "startNum": 157079,
-            "count": 15
-        },
-        "3672": {
-            "startNum": 157094,
-            "count": 15
-        },
-        "3673": {
-            "startNum": 157109,
-            "count": 10
-        },
-        "3674": {
-            "startNum": 157119,
-            "count": 5
-        },
-        "3675": {
-            "startNum": 157124,
-            "count": 5
-        },
-        "3676": {
-            "startNum": 157129,
-            "count": 5
-        },
-        "3677": {
-            "startNum": 157134,
-            "count": 5
-        },
-        "3678": {
-            "startNum": 157139,
-            "count": 10
-        },
-        "3679": {
-            "startNum": 157149,
-            "count": 14
-        },
-        "3680": {
-            "startNum": 157163,
-            "count": 13
-        },
-        "3681": {
-            "startNum": 157176,
-            "count": 18
-        }
+  "latest": 3663,
+  "all": {
+    "7331": {
+      "startNum": 80085,
+      "count": 1
+    },
+    "3647": {
+      "startNum": 156812,
+      "count": 18
+    },
+    "3648": {
+      "startNum": 156830,
+      "count": 14
+    },
+    "3649": {
+      "startNum": 156844,
+      "count": 18
+    },
+    "3650": {
+      "startNum": 156862,
+      "count": 15
+    },
+    "3651": {
+      "startNum": 156877,
+      "count": 16
+    },
+    "3652": {
+      "startNum": 156893,
+      "count": 17
+    },
+    "3653": {
+      "startNum": 156910,
+      "count": 14
+    },
+    "3654": {
+      "startNum": 156924,
+      "count": 18
+    },
+    "3655": {
+      "startNum": 156942,
+      "count": 8
+    },
+    "3656": {
+      "startNum": 156950,
+      "count": 16
+    },
+    "3657": {
+      "startNum": 156966,
+      "count": 17
+    },
+    "3658": {
+      "startNum": 156983,
+      "count": 9
+    },
+    "3659": {
+      "startNum": 156992,
+      "count": 11
+    },
+    "3660": {
+      "startNum": 157003,
+      "count": 7
+    },
+    "3661": {
+      "startNum": 157010,
+      "count": 19
+    },
+    "3662": {
+      "startNum": 157029,
+      "count": 12
+    },
+    "3663": {
+      "startNum": 157041,
+      "count": 15
     }
+  }
 }

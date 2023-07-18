@@ -1,5 +1,4 @@
 import argparse
-import spacy
 from helpers.helpers import (
     load_samples,
     load_unused,
@@ -20,7 +19,7 @@ if data_folder is None:
 # BEGIN LOGIC -----------------------------------------------------------------
 
 # Init NLP for determining sentance similarity
-nlp = spacy.load("en_core_web_sm")
+# nlp = spacy.load("en_core_web_sm")
 
 used = load_used(data_folder)
 unused = load_unused(data_folder)

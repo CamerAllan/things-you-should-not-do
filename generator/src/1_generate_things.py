@@ -1,4 +1,5 @@
 import os
+from typing import Dict, List
 import openai
 import json
 import argparse
@@ -35,48 +36,52 @@ def generate_prompt(prompt_examples_sample):
     with open(adjectives_filepath, "r") as adjectives_file:
         adjective_1 = random_line(adjectives_file).strip()
 
-    prompt_start = f"Physically Improbable, Convoluted, Preposterous Things You Should Not Do (in the imperative tense):\n"
+    prompt_start = {
+        "role": "system",
+        "content": (
+            'You generate suggestions for XKCD\'s "Things You Should Not Do" comic.\n'
+            "Suggestions should be in the style of Randall Munroe's writing.\n"
+            "Suggestions should always be humerous.\n"
+            "Suggestions should always be in the imperative tense.\n"
+            "Good suggestions might be outrageous, physically improbable or dangerous.\n"
+            # f"You provide humerous, improbable activities which should not be done under any circumstances.\n"
+            # "Each activity should be conceptually distinct.\n"
+            # "Phrasing of suggestions should be varied, while remaining in the imperative tense."
+        ),
+    }
 
-    prompt = prompt_start
+    prompt = [prompt_start]
     for sample_example in prompt_examples_sample:
-        prompt += f"\n- {sample_example}"
-    prompt += "\n-"
+        prompt.append({"role": "assistant", "content": sample_example})
 
     return prompt
 
 
-def generate(prompt) -> str:
-    response = openai.Completion.create(
-        model="text-davinci-002",
-        prompt=prompt,
-        temperature=1,
-        max_tokens=500,
-        top_p=1,
-        best_of=1,
-        frequency_penalty=0.1,  # Too high and we'll have opposite effect - remember the ratio of samples to insertions
-        presence_penalty=0.2,
-        stop=["\n"],
+def generate(prompt: List[Dict], n) -> str:
+    ideas = []
+
+    response = openai.ChatCompletion.create(
+        model="gpt-4", messages=prompt, temperature=1.1, n=n, presence_penalty=1
     )
 
-    text = response.get("choices")[0]["text"]
+    ideas = [
+        r["message"]["content"].replace(".", "").strip()
+        for r in response.get("choices")
+    ]
 
-    return text.strip()
+    print("\n".join(ideas))
+    return ideas
 
 
 def generate_n(n: int):
-    things = []
-    for i in range(0, n):
-        # Prepend things we've already generated so that penalties apply
-        # Prepend because last thing in list has outsized influence
-        samples = things + generate_prompt_examples_sample(n)
-        prompt = generate_prompt(samples)
-        thing = generate(prompt)
-        things.append(thing)
+    samples = generate_prompt_examples_sample(n)
+    prompt = generate_prompt(samples)
+    things = generate(prompt, n)
 
     return things
 
 
-unused += generate_n(n)
+unused = generate_n(n)
 
 with open(f"{data_folder}/unused.json", "w") as file:
-    file_things = json.dump(unused, file)
+    file_things = json.dump(unused, file, indent=4)

@@ -16,6 +16,8 @@ python3 src/1_generate_things.py ./data -n $NUM
 python3 src/2_sort_things.py ./data 
 python3 src/3_build_things.py ./data ./out -n $NUM
 
+echo "Generatiom complete"
+
 # Copy the outputs into the public directory of the UI
 cp ./out/parts/* ../ui/public/data/parts
 cp ./data/catalogue.json ../ui/public/data/catalogue.json
@@ -30,4 +32,4 @@ git commit -m "${COMMIT_MESSAGE}"
 # Push em
 git push
 
-
+echo "Done!"

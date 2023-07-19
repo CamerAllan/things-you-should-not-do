@@ -11,10 +11,10 @@ git pull --rebase
 # Choose a random number of entries
 NUM=$(shuf -i 10-18 -n 1)
 
-# Run the thing
-python3 src/1_generate_things.py ./data -n $NUM
-python3 src/2_sort_things.py ./data 
-python3 src/3_build_things.py ./data ./out -n $NUM
+# Run the thing (my python install is goobered and cron doesn't know about PATH so this is how it is)
+/usr/lib/python-exec/python3.10/python src/1_generate_things.py ./data -n $NUM
+/usr/lib/python-exec/python3.10/python src/2_sort_things.py ./data 
+/usr/lib/python-exec/python3.10/python src/3_build_things.py ./data ./out -n $NUM
 
 echo "Generatiom complete"
 
